@@ -9,7 +9,12 @@ export type DynamicPostProps = {
 };
 
 export default function DynamicPost({ post }: DynamicPostProps) {
-  return <p>{post.attributes.title}</p>;
+  return (
+    <>
+      <p>{post.attributes.title}</p>
+      <p dangerouslySetInnerHTML={{ __html: post.attributes.content }} />
+    </>
+  );
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
