@@ -3,9 +3,9 @@ export type PostID = number;
 export type AuthorAttributesData = {
   name: string;
   created_by: number;
-  updated_by: number;
-  created_at: string;
-  updated_at: string;
+  updatedBy: number;
+  createdAt: string;
+  updatedAt: string;
 };
 
 export type PostAuthor = {
@@ -18,7 +18,7 @@ export type PostAuthor = {
 export type CategoryAttributesData = {
   name: string;
   created_by: number;
-  updated_by: number;
+  updatedBy: number;
   publishedAt: string;
 };
 
@@ -92,9 +92,9 @@ export type PostAttributesData = {
   author: PostAuthor;
   category: PostCategory;
   created_by: PostCreatedBy;
-  updated_by: PostCreatedBy;
-  created_at: string;
-  updated_at: string;
+  updatedBy: PostCreatedBy;
+  createdAt: string;
+  updatedAt: string;
   cover: PostCover;
 };
 
