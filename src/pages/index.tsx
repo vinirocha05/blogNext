@@ -18,7 +18,9 @@ export default function Home({ posts }: HomePropos) {
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 export const getStaticProps: GetStaticProps = async (context) => {
-  const posts = await getAllPosts();
+  const posts = await getAllPosts(
+    'sort=id:desc&pagination[start]=0&pagination[limit]=30'
+  );
   return {
     props: { posts },
   };

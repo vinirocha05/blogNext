@@ -110,7 +110,7 @@ export type Data = {
       page: number;
       pageSize: number;
       pageCount: number;
-      total: number;
+      total: string;
     };
   };
 };
