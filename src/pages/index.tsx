@@ -3,7 +3,6 @@ import { PostData } from '../domain/posts/post';
 
 import { getAllPosts } from '../data/posts/get-all-posts';
 import HomePage from '../containers/HomePage';
-import { getPost } from '../data/posts/get-post';
 
 export type HomePropos = {
   posts: PostData[];
