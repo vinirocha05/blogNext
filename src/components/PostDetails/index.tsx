@@ -17,8 +17,6 @@ export default function PostDetails({
     <Container>
       Publicado por {author} em <Date date={date} /> |{' '}
       <Link href={`/categories/${category}`}>
-        {' '}
-        oiie
         <a>{category}</a>
       </Link>
     </Container>
