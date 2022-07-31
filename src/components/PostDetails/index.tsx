@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import Date from '../Date';
 import { Container } from './syles';
 
@@ -14,7 +15,10 @@ export default function PostDetails({
 }: PostDetailsProps) {
   return (
     <Container>
-      Publicado por {author} em <Date date={date} /> | {category}
+      Publicado por {author} em <Date date={date} /> |{' '}
+      <Link href={`/categories/${category}`}>
+        <a>{category}</a>
+      </Link>
     </Container>
   );
 }
