@@ -19,7 +19,6 @@ export default function Category({ posts, category }: CategoryPropos) {
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 export const getServerSideProps: GetServerSideProps = async (ctx) => {
   const urlQuery = `&sort=id:desc&pagination[start]=0&pagination[limit]=30&filters[category][name][$containsi]=${ctx.query.category}`;
-  console.log(ctx.query.category, urlQuery);
   const posts = await getAllPosts(urlQuery);
   return {
     props: { posts, category: ctx.query.category },
