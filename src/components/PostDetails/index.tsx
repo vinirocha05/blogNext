@@ -16,7 +16,10 @@ export default function PostDetails({
   return (
     <Container>
       Publicado por {author} em <Date date={date} /> |{' '}
-      <Link href={`/categories/${category}`}>
+      <Link
+        as={`/post/pages/1/${category.toLocaleLowerCase()}`}
+        href="/[...params]"
+      >
         <a>{category}</a>
       </Link>
     </Container>

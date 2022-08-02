@@ -1,7 +1,7 @@
 import { Container } from './syles';
 
 export type MainContainerProps = {
-  children: JSX.Element;
+  children: React.ReactNode;
 };
 
 export default function MainContainer({ children }: MainContainerProps) {

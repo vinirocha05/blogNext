@@ -12,3 +12,9 @@ export const Category = styled.div`
   padding: 2rem;
   font-weight: bold;
 `;
+
+export const AllPostsLinks = styled.a`
+  display: block;
+  text-align: center;
+  margin: 2rem;
+`;

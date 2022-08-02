@@ -19,7 +19,7 @@ export default function DynamicPost({ post }: DynamicPostProps) {
     return <div>Loading</div>;
   }
 
-  if (!post) {
+  if (!post.attributes.title) {
     return <Error statusCode={404} />;
   }
   return (
