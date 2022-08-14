@@ -4,6 +4,8 @@ export type HeadingProps = {
   children: React.ReactNode;
 };
 
-export default function Heading({ children }: HeadingProps) {
+export default function Heading({
+  children,
+}: HeadingProps) {
   return <Container>{children}</Container>;
 }

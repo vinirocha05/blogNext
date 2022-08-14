@@ -7,7 +7,10 @@ export type CommentsProps = {
   title: string;
 };
 
-export default function Comments({ slug, title }: CommentsProps) {
+export default function Comments({
+  slug,
+  title,
+}: CommentsProps) {
   return (
     <Container>
       <DiscussionEmbed

@@ -8,7 +8,11 @@ import PostCard from '../../components/PostCard';
 import { SITE_NAME } from '../../config/app-config';
 import { PaginationData } from '../../domain/posts/pagination';
 import { PostData } from '../../domain/posts/post';
-import { Container, Category, AllPostsLinks } from './styles';
+import {
+  Container,
+  Category,
+  AllPostsLinks,
+} from './styles';
 
 export type HomePageProps = {
   posts: PostData[];
@@ -25,13 +29,21 @@ export default function HomePage({
     <>
       <Head>
         <title>
-          {category ? `${category} - ${SITE_NAME}` : SITE_NAME}{' '}
-          {pagination?.nextPage && `- Página ${pagination.nextPage - 1}`}
+          {category
+            ? `${category} - ${SITE_NAME}`
+            : SITE_NAME}{' '}
+          {pagination?.nextPage &&
+            `- Página ${pagination.nextPage - 1}`}
         </title>
-        <meta name="description" content="este é meu blog de tecnologia" />
+        <meta
+          name="description"
+          content="este é meu blog de tecnologia"
+        />
       </Head>
       <Header />
-      {category && <Category> Categoria: {category}</Category>}
+      {category && (
+        <Category> Categoria: {category}</Category>
+      )}
       <MainContainer>
         <Container>
           {posts.map((post) => (
@@ -39,14 +51,23 @@ export default function HomePage({
               key={post.attributes.slug}
               title={post.attributes.title}
               slug={post.attributes.slug}
-              cover={post.attributes.cover.data.attributes.formats.small.url}
+              cover={
+                post.attributes.cover.data.attributes
+                  .formats.small.url
+              }
             />
           ))}
         </Container>
         <Pagination {...pagination} />
         {!pagination?.nextPage && (
-          <Link passHref href="/[...params]" as="post/pages/1">
-            <AllPostsLinks>Ver todos os posts</AllPostsLinks>
+          <Link
+            passHref
+            href="/[...params]"
+            as="post/pages/1"
+          >
+            <AllPostsLinks>
+              Ver todos os posts
+            </AllPostsLinks>
           </Link>
         )}
       </MainContainer>

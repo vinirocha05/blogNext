@@ -18,7 +18,7 @@ export const Container = styled.article`
       background: ${theme.colors.lightGray};
       color: ${theme.colors.darkDray};
       padding: ${theme.spacings.large};
-      margin: ${theme.spacings.large} 0;
+
       line-height: 1.5;
       font-size: ${theme.font.sizes.medium};
     `}

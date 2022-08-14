@@ -14,7 +14,8 @@ export default function Pagination({
   const categoryName = category || '';
   const nextLink = `/post/pages/${nextPage}/${categoryName}`;
   const previousLink = `/post/pages/${previousPage}/${categoryName}`;
-  const hasNextPage = nextPage * postsPerPage < postsPerPage + numberOfPosts;
+  const hasNextPage =
+    nextPage * postsPerPage < postsPerPage + numberOfPosts;
   const hasPreviousPage = previousPage >= 1;
 
   return (

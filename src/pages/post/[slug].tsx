@@ -12,7 +12,9 @@ export type DynamicPostProps = {
   post: PostData;
 };
 
-export default function DynamicPost({ post }: DynamicPostProps) {
+export default function DynamicPost({
+  post,
+}: DynamicPostProps) {
   const router = useRouter();
 
   if (router.isFallback) {
@@ -47,7 +49,9 @@ export const getStaticPaths: GetStaticPaths = async () => {
   };
 };
 
-export const getStaticProps: GetStaticProps = async (context) => {
+export const getStaticProps: GetStaticProps = async (
+  context
+) => {
   const post = await getPost(context.params.slug);
   return {
     props: { post: post[0] },

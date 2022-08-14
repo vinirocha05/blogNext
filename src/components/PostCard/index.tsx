@@ -1,5 +1,9 @@
 import Link from 'next/link';
-import { Container, PostCardCover, PostCardHeading } from './syles';
+import {
+  Container,
+  PostCardCover,
+  PostCardHeading,
+} from './syles';
 
 export type PostCardProps = {
   slug: string;
@@ -7,7 +11,11 @@ export type PostCardProps = {
   cover: string;
 };
 
-export default function PostCard({ slug, title, cover }: PostCardProps) {
+export default function PostCard({
+  slug,
+  title,
+  cover,
+}: PostCardProps) {
   return (
     <Container>
       <PostCardCover>

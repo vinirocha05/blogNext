@@ -25,7 +25,9 @@ export default function HomePage({ post }: PostProps) {
         </title>
         <meta
           name="description"
-          content={removeHtml(post.attributes.content).slice(0, 150)}
+          content={removeHtml(
+            post.attributes.content
+          ).slice(0, 150)}
         />
       </Head>
       <Header />
@@ -33,18 +35,30 @@ export default function HomePage({ post }: PostProps) {
         <Container>
           <Heading>{post.attributes.title}</Heading>
           <PostCover
-            coverUrl={post.attributes.cover.data.attributes.formats.large.url}
+            coverUrl={
+              post.attributes.cover.data.attributes.formats
+                .large.url
+            }
             alt={post.attributes.title}
           />
           <PostDetails
             date={post.attributes.createdAt}
-            author={post.attributes.author.data.attributes.name}
-            category={post.attributes.category.data.attributes.name}
+            author={
+              post.attributes.author.data.attributes.name
+            }
+            category={
+              post.attributes.category.data.attributes.name
+            }
           />
-          <PostContainer content={post.attributes.content} />
+          <PostContainer
+            content={post.attributes.content}
+          />
         </Container>
       </MainContainer>
-      <Comments slug={post.attributes.slug} title={post.attributes.title} />
+      <Comments
+        slug={post.attributes.slug}
+        title={post.attributes.title}
+      />
       <Footer />
     </>
   );

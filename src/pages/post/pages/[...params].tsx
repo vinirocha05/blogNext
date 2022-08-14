@@ -13,11 +13,22 @@ export type PagePropos = {
   pagination: PaginationData;
 };
 
-export default function Page({ posts, category, pagination }: PagePropos) {
+export default function Page({
+  posts,
+  category,
+  pagination,
+}: PagePropos) {
   const router = useRouter();
   if (router.isFallback) return <div>Carregando...</div>;
-  if (!posts.length) return <div>P[agina não encontrada]...</div>;
-  return <HomePage posts={posts} category={category} pagination={pagination} />;
+  if (!posts.length)
+    return <div>Página não encontrada]...</div>;
+  return (
+    <HomePage
+      posts={posts}
+      category={category}
+      pagination={pagination}
+    />
+  );
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
@@ -28,7 +39,9 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-export const getStaticProps: GetStaticProps = async (ctx) => {
+export const getStaticProps: GetStaticProps = async (
+  ctx
+) => {
   const page = Number(ctx.params.params[0]);
   const category = ctx.params.params[1] || '';
 
@@ -42,7 +55,9 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
   const nextPage = page + 1;
   const previousPage = page - 1;
 
-  const numberOfPosts = Number(await countAllPosts(categoryQuery));
+  const numberOfPosts = Number(
+    await countAllPosts(categoryQuery)
+  );
 
   const queryUrl = `sort=id:desc&pagination[start]=${startFrom}&pagination[limit]=${postsPerPage}&${categoryQuery}`;
   const posts = await getAllPosts(queryUrl);
