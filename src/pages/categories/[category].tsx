@@ -8,7 +8,10 @@ export type CategoryPropos = {
   category?: string;
 };
 
-export default function Category({ posts, category }: CategoryPropos) {
+export default function Category({
+  posts,
+  category,
+}: CategoryPropos) {
   return (
     <div>
       <HomePage posts={posts} category={category} />
@@ -17,10 +20,11 @@ export default function Category({ posts, category }: CategoryPropos) {
 }
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-export const getServerSideProps: GetServerSideProps = async (ctx) => {
-  const urlQuery = `&sort=id:desc&pagination[start]=0&pagination[limit]=30&filters[category][name][$containsi]=${ctx.query.category}`;
-  const posts = await getAllPosts(urlQuery);
-  return {
-    props: { posts, category: ctx.query.category },
+export const getServerSideProps: GetServerSideProps =
+  async (ctx) => {
+    const urlQuery = `&sort=id:desc&pagination[start]=0&pagination[limit]=30&filters[category][name][$containsi]=${ctx.query.category}`;
+    const posts = await getAllPosts(urlQuery);
+    return {
+      props: { posts, category: ctx.query.category },
+    };
   };
-};
