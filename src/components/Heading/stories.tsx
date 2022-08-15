@@ -10,7 +10,6 @@ export default {
 
 export const Heading1: Story<HeadingProps> = (args) => (
   <div style={{ maxWidth: '36rem' }}>
-    {' '}
     <Heading {...args} />
   </div>
 );
